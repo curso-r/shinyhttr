@@ -1,0 +1,78 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# shinyhttr
+
+For now, the goal of shinyhttr is to integrate httr::progress with shinyWidgets::progressBar.
+
+In practice, the difference will be
+
+```{r, eval=FALSE}
+# from this
+httr::GET("http://download.com/some_heavy_file.txt", progress())
+
+
+# to this
+httr::GET("http://download.com/some_heavy_file.txt", progress(session, id = "my_progress_bar1"))
+```
+
+
+![gif_progress_example.gif](img/gif_progress_example.gif)
+
+## Installation
+
+```{r, eval=FALSE}
+devtools::install_github("curso-r/shinyhttr")
+```
+
+## Example
+
+```{r, eval=FALSE}
+library(shiny)
+library(shinyWidgets)
+library(httr)
+library(shinyhttr)
+
+ui <- fluidPage(
+
+  sidebarLayout(
+
+    NULL,
+
+    mainPanel(
+      actionButton('download', 'Download 100MB file...'),
+      tags$p("see R console to compare both progress bars."),
+      progressBar(
+        id = "pb",
+        value = 0,
+        title = "",
+        display_pct = TRUE
+      )
+    )
+  )
+)
+
+server <- function(input, output, session) {
+  observeEvent(input$download, {
+    GET(
+      url = "https://speed.hetzner.de/100MB.bin",
+      shinyhttr::progress(session, id = "pb") # <- the magic happens here. progress() now has session and id args
+    )
+  })
+}
+
+shinyApp(ui, server)
+```
+
