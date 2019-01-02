@@ -17,9 +17,7 @@ httr::GET("http://download.com/some_heavy_file.txt", progress())
 httr::GET("http://download.com/some_heavy_file.txt", progress(session, id = "my_progress_bar1"))
 ```
 
-<img src="img/gif_progress_example.gif" width="100%" />
-
-![Alt Text](img/gif_progress_example.gif)
+![gif\_progress\_example.gif](img/gif_progress_example.gif)
 
 ## Installation
 
