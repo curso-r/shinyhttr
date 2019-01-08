@@ -5,7 +5,8 @@
 \title{Add a progress bar compatible with shinyWidgets::progressBar.}
 \usage{
 progress(session, id, type = c("down", "up"), con = stdout(),
-  title = NULL, status = NULL, range_value = NULL, unit_mark = "\%")
+  title = NULL, status = NULL, range_value = NULL,
+  unit_mark = "\%")
 }
 \arguments{
 \item{session}{(from shinyWidgets::updateProgressBar doc) The 'session' object passed to function given to shinyServer.}
@@ -29,41 +30,45 @@ Add a progress bar to request just like the vanilla httr::progress but with capa
 }
 \examples{
 
-## Not run:
+\dontrun{
+
 if (interactive()) {
-library(shiny)
-library(shinyWidgets)
-library(httr)
-
-ui <- fluidPage(
-
-  sidebarLayout(
-
-    NULL,
-
-    mainPanel(
-      actionButton('download', 'Download 100MB file...'),
-      tags$p("see R console to compare both progress bars."),
-      progressBar(
-        id = "pb",
-        value = 0,
-        title = "",
-        display_pct = TRUE
+  
+  library(shiny)
+  library(shinyWidgets)
+  library(httr)
+  
+  ui <- fluidPage(
+    
+    sidebarLayout(
+      
+      NULL,
+      
+      mainPanel(
+        actionButton('download', 'Download 100MB file...'),
+        tags$p("see R console to compare both progress bars."),
+        progressBar(
+          id = "pb",
+          value = 0,
+          title = "",
+          display_pct = TRUE
+        )
       )
     )
   )
-)
-
-server <- function(input, output, session) {
-  observeEvent(input$download, {
-    GET(
-      url = "https://speed.hetzner.de/100MB.bin",
-      progress(session, id = "pb")
-    )
-  })
+  
+  server <- function(input, output, session) {
+    observeEvent(input$download, {
+      GET(
+        url = "https://speed.hetzner.de/100MB.bin",
+        progress(session, id = "pb")
+      )
+    })
+  }
+  
+  shinyApp(ui, server)
 }
 
-shinyApp(ui, server)
 }
 }
 \seealso{

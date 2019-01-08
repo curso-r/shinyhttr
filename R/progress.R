@@ -12,48 +12,52 @@
 #' @param unit_mark (from shinyWidgets::updateProgressBar doc) Unit for value displayed on the progress bar, default to "\%".
 #'
 #' @export
+#' 
 #'
 #' @seealso \code{\link[httr]{progress}}, \code{\link[shinyWidgets]{progressBar}}, \code{\link[shinyWidgets]{updateProgressBar}}
 #'
 #' @examples
 #'
-#'## Not run:
-#'if (interactive()) {
-#' library(shiny)
-#' library(shinyWidgets)
-#' library(httr)
+#' \dontrun{
 #'
-#' ui <- fluidPage(
-#'
-#'   sidebarLayout(
-#'
-#'     NULL,
-#'
-#'     mainPanel(
-#'       actionButton('download', 'Download 100MB file...'),
-#'       tags$p("see R console to compare both progress bars."),
-#'       progressBar(
-#'         id = "pb",
-#'         value = 0,
-#'         title = "",
-#'         display_pct = TRUE
+#' if (interactive()) {
+#'   
+#'   library(shiny)
+#'   library(shinyWidgets)
+#'   library(httr)
+#'   
+#'   ui <- fluidPage(
+#'     
+#'     sidebarLayout(
+#'       
+#'       NULL,
+#'       
+#'       mainPanel(
+#'         actionButton('download', 'Download 100MB file...'),
+#'         tags$p("see R console to compare both progress bars."),
+#'         progressBar(
+#'           id = "pb",
+#'           value = 0,
+#'           title = "",
+#'           display_pct = TRUE
+#'         )
 #'       )
 #'     )
 #'   )
-#' )
-#'
-#' server <- function(input, output, session) {
-#'   observeEvent(input$download, {
-#'     GET(
-#'       url = "https://speed.hetzner.de/100MB.bin",
-#'       progress(session, id = "pb")
-#'     )
-#'   })
+#'   
+#'   server <- function(input, output, session) {
+#'     observeEvent(input$download, {
+#'       GET(
+#'         url = "https://speed.hetzner.de/100MB.bin",
+#'         progress(session, id = "pb")
+#'       )
+#'     })
+#'   }
+#'   
+#'   shinyApp(ui, server)
 #' }
 #'
-#' shinyApp(ui, server)
 #'}
-
 progress <- function (
   session,
   id,
@@ -66,8 +70,9 @@ progress <- function (
   range_value =  NULL,
   unit_mark = "%"
 ) {
+  request <- utils::getFromNamespace("request", "httr")
   type <- match.arg(type)
-  httr:::request(options = list(
+  request(options = list(
     noprogress = FALSE,
     progressfunction = progress_bar(
       type,
@@ -114,6 +119,7 @@ progress_bar <- function (
   range_value =  NULL,
   unit_mark = "%"
 ) {
+  bytes <- utils::getFromNamespace("bytes", "httr")
   bar <- NULL
   show_progress <- function(down, up) {
     if (type == "down") {
