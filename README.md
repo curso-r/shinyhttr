@@ -3,23 +3,34 @@
 
 # shinyhttr
 
-For now, the goal of shinyhttr is to integrate httr::progress with
-shinyWidgets::progressBar.
+[![Travis build
+status](https://travis-ci.org/curso-r/shinyhttr.svg?branch=master)](https://travis-ci.org/curso-r/shinyhttr)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/curso-r/shinyhttr?branch=master&svg=true)](https://ci.appveyor.com/project/curso-r/shinyhttr)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/shinyhttr)](https://cran.r-project.org/package=shinyhttr)
+
+The goal of shinyhttr is to integrate `httr::progress` with
+`shinyWidgets::progressBar`.
 
 In practice, the difference will be
 
 ``` r
 # from this
-httr::GET("http://download.com/some_heavy_file.txt", progress())
+httr::GET("http://download.com/large_file.txt", 
+          progress())
 
 
 # to this
-httr::GET("http://download.com/some_heavy_file.txt", progress(session, id = "my_progress_bar1"))
+httr::GET("http://download.com/large_file.txt", 
+          progress(session, id = "my_progress_bar1"))
 ```
 
-![gif\_progress\_example.gif](img/gif_progress_example.gif)
+![gif\_progress\_example.gif](man/figures/README-gif_progress_example.gif)
 
 ## Installation
+
+`shinyhttr` is not on CRAN yet. To install it, you may use `devtools`:
 
 ``` r
 devtools::install_github("curso-r/shinyhttr")

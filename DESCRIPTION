@@ -1,15 +1,17 @@
 Package: shinyhttr
 Type: Package
-Title: Make httr::progress and shinyWidgets::progressBar talk to each other.
+Title: Progress Bars For Downloads In Shiny Apps
 Version: 1.0
 Author: Athos Petri Damiani <athos.damiani@curso-r.com>
 Maintainer: Athos Petri Damiani <athos.damiani@curso-r.com>
-Description: This package upgrades the httr::progress function with power to send output to shinyWidgets::progressBar. 
-      It is just a tweak at the original functions from httr to make it smooth for shiny developers.
+Description: This package modifies the httr::progress function to let it 
+    send output to shinyWidgets::progressBar. It is just a tweak at the 
+    original functions from httr to make it smooth for shiny developers.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
     shinyWidgets,
-    httr
-RoxygenNote: 6.0.1
+    httr,
+    utils
+RoxygenNote: 6.1.1
