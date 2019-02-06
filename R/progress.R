@@ -151,7 +151,7 @@ progress_bar <- function (
 
     shinyWidgets::updateProgressBar(
       session = session,
-      id = id,
+      id = session$ns(id),
       value = now,
       total = total,
       title = title,
@@ -165,3 +165,19 @@ progress_bar <- function (
   show_progress
 }
 
+
+#' runExample
+#'
+#' Launch shiny example application using shinyhttr::progress_bar. This app also uses module to show that it works with it too.
+#'
+#' @param display.mode The mode in which to display the example. Defaults to showcase, but may be set to normal to see the example without code or commentary.
+#' 
+#' @export
+runExample <- function(display.mode = "showcase") {
+  appDir <- system.file("shiny-apps", "shinyhttrExample", package = "shinyhttr")
+  if (appDir == "") {
+    stop("Could not find example directory. Try re-installing `shinyhttr`.", call. = FALSE)
+  }
+  
+  shiny::runApp(appDir, display.mode = display.mode)
+}

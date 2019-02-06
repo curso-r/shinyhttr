@@ -5,8 +5,7 @@
 \title{Add a progress bar compatible with shinyWidgets::progressBar.}
 \usage{
 progress(session, id, type = c("down", "up"), con = stdout(),
-  title = NULL, status = NULL, range_value = NULL,
-  unit_mark = "\%")
+  title = NULL, status = NULL, range_value = NULL, unit_mark = "\%")
 }
 \arguments{
 \item{session}{(from shinyWidgets::updateProgressBar doc) The 'session' object passed to function given to shinyServer.}
