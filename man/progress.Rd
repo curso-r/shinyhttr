@@ -2,30 +2,30 @@
 % Please edit documentation in R/progress.R
 \name{progress}
 \alias{progress}
-\title{Add a progress bar compatible with shinyWidgets::progressBar.}
+\title{Add a progress bar compatible with `shinyWidgets::updateProgressBar()`.}
 \usage{
 progress(session, id, type = c("down", "up"), con = stdout(),
   title = NULL, status = NULL, range_value = NULL, unit_mark = "\%")
 }
 \arguments{
-\item{session}{(from shinyWidgets::updateProgressBar doc) The 'session' object passed to function given to shinyServer.}
+\item{session}{(from `shinyWidgets::updateProgressBar()`` doc) The 'session' object passed to function given to shinyServer.}
 
-\item{id}{(from shinyWidgets::updateProgressBar doc) An id used to update the progress bar.}
+\item{id}{(from `shinyWidgets::updateProgressBar()` doc) An id used to update the progress bar.}
 
-\item{type}{(from httr::progress doc) Type of progress to display: either number of bytes uploaded or downloaded.}
+\item{type}{(from `httr::progress()`` doc) Type of progress to display: either number of bytes uploaded or downloaded.}
 
-\item{con}{(from httr::progress doc) Connection to send output too. Usually \code{stdout()} or \code{stderr}.}
+\item{con}{(from `httr::progress()` doc) Connection to send output too. Usually \code{stdout()} or \code{stderr}.}
 
-\item{title}{(from shinyWidgets::updateProgressBar doc) character, optional title.}
+\item{title}{(from `shinyWidgets::updateProgressBar()` doc) character, optional title.}
 
-\item{status}{(from shinyWidgets::updateProgressBar doc) Color, must be a valid Bootstrap status : primary, info, success, warning, danger.}
+\item{status}{(from `shinyWidgets::updateProgressBar()` doc) Color, must be a valid Bootstrap status : primary, info, success, warning, danger.}
 
-\item{range_value}{(from shinyWidgets::updateProgressBar doc) Default is to display percentage ([0, 100]), but you can specify a custom range, e.g. -50, 50.}
+\item{range_value}{(from `shinyWidgets::updateProgressBar()` doc) Default is to display percentage ([0, 100]), but you can specify a custom range, e.g. -50, 50.}
 
-\item{unit_mark}{(from shinyWidgets::updateProgressBar doc) Unit for value displayed on the progress bar, default to "\%".}
+\item{unit_mark}{(from `shinyWidgets::updateProgressBar()` doc) Unit for value displayed on the progress bar, default to "\%".}
 }
 \description{
-Add a progress bar to request just like the vanilla httr::progress but with capability to talk to shinyWidgets::progressBar by giving the session and id arguments to it.
+Add a progress bar to request just like the vanilla `httr::progress()` but with capability to talk to `shinyWidgets::updateProgressBar()` by giving the session and id arguments to it.
 }
 \examples{
 

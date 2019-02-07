@@ -1,15 +1,15 @@
-#' Add a progress bar compatible with shinyWidgets::progressBar.
+#' Add a progress bar compatible with `shinyWidgets::updateProgressBar()`.
 #'
-#' Add a progress bar to request just like the vanilla httr::progress but with capability to talk to shinyWidgets::progressBar by giving the session and id arguments to it.
+#' Add a progress bar to request just like the vanilla `httr::progress()` but with capability to talk to `shinyWidgets::updateProgressBar()` by giving the session and id arguments to it.
 #'
-#' @param session (from shinyWidgets::updateProgressBar doc) The 'session' object passed to function given to shinyServer.
-#' @param id (from shinyWidgets::updateProgressBar doc) An id used to update the progress bar.
-#' @param type 	(from httr::progress doc) Type of progress to display: either number of bytes uploaded or downloaded.
-#' @param con (from httr::progress doc) Connection to send output too. Usually \code{stdout()} or \code{stderr}.
-#' @param title (from shinyWidgets::updateProgressBar doc) character, optional title.
-#' @param status (from shinyWidgets::updateProgressBar doc) Color, must be a valid Bootstrap status : primary, info, success, warning, danger.
-#' @param range_value (from shinyWidgets::updateProgressBar doc) Default is to display percentage ([0, 100]), but you can specify a custom range, e.g. -50, 50.
-#' @param unit_mark (from shinyWidgets::updateProgressBar doc) Unit for value displayed on the progress bar, default to "\%".
+#' @param session (from `shinyWidgets::updateProgressBar()`` doc) The 'session' object passed to function given to shinyServer.
+#' @param id (from `shinyWidgets::updateProgressBar()` doc) An id used to update the progress bar.
+#' @param type 	(from `httr::progress()`` doc) Type of progress to display: either number of bytes uploaded or downloaded.
+#' @param con (from `httr::progress()` doc) Connection to send output too. Usually \code{stdout()} or \code{stderr}.
+#' @param title (from `shinyWidgets::updateProgressBar()` doc) character, optional title.
+#' @param status (from `shinyWidgets::updateProgressBar()` doc) Color, must be a valid Bootstrap status : primary, info, success, warning, danger.
+#' @param range_value (from `shinyWidgets::updateProgressBar()` doc) Default is to display percentage ([0, 100]), but you can specify a custom range, e.g. -50, 50.
+#' @param unit_mark (from `shinyWidgets::updateProgressBar()` doc) Unit for value displayed on the progress bar, default to "\%".
 #'
 #' @export
 #' 
@@ -92,21 +92,21 @@ progress <- function (
 
 #' progress_bar
 #'
-#' same as httr:::progress_bar but with capability to talk to shinyWidgets::progressBar.
+#' Same as `httr:::progress_bar()` but with capability to talk to `shinyWidgets::progressBar()`.
 #'
-#' @param type 	(from httr::progress doc) Type of progress to display: either number of bytes uploaded or downloaded.
-#' @param con (from httr::progress doc) Connection to send output too. Usually \code{stdout()} or \code{stderr}.
-#' @param session (from shinyWidgets::updateProgressBar doc) The 'session' object passed to function given to shinyServer.
-#' @param id (from shinyWidgets::updateProgressBar doc) An id used to update the progress bar.
-#' @param title (from shinyWidgets::updateProgressBar doc) character, optional title.
-#' @param status (from shinyWidgets::updateProgressBar doc) Color, must be a valid Bootstrap status : primary, info, success, warning, danger.
-#' @param range_value (from shinyWidgets::updateProgressBar doc) Default is to display percentage ([0, 100]), but you can specify a custom range, e.g. -50, 50.
-#' @param unit_mark (from shinyWidgets::updateProgressBar doc) Unit for value displayed on the progress bar, default to "\%".
+#' @param type 	(from `httr::progress()` doc) Type of progress to display: either number of bytes uploaded or downloaded.
+#' @param con (from `httr::progress()` doc) Connection to send output too. Usually \code{stdout()} or \code{stderr}.
+#' @param session (from `shinyWidgets::updateProgressBar()` doc) The 'session' object passed to function given to shinyServer.
+#' @param id (from `shinyWidgets::updateProgressBar()` doc) An id used to update the progress bar.
+#' @param title (from `shinyWidgets::updateProgressBar()` doc) character, optional title.
+#' @param status (from `shinyWidgets::updateProgressBar()` doc) Color, must be a valid Bootstrap status : primary, info, success, warning, danger.
+#' @param range_value (from `shinyWidgets::updateProgressBar()` doc) Default is to display percentage ([0, 100]), but you can specify a custom range, e.g. -50, 50.
+#' @param unit_mark (from `shinyWidgets::updateProgressBar()` doc) Unit for value displayed on the progress bar, default to "\%".
 #'
 #'
 #' @return a function with rules to print out the progress.
 #'
-#' @seealso \code{\link{progress}}
+#' @seealso \code{\link{progress}}, \code{\link[shinyWidgets]{progressBar}}
 #'
 progress_bar <- function (
   type,

@@ -37,7 +37,13 @@ httr::GET("http://download.com/large_file.txt",
 
 ## Installation
 
-`shinyhttr` is not on CRAN yet. To install it, you may use `devtools`:
+From CRAN:
+
+```{r, eval=FALSE}
+install.packages("shinyhttr")
+```
+
+From github:
 
 ```{r, eval=FALSE}
 devtools::install_github("curso-r/shinyhttr")
