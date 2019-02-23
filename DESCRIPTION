@@ -10,7 +10,7 @@ Authors@R:
              email = "athos.damiani@curso-r.com"),
       person(given = "Hadley",
              family = "Wickham",
-             role = c("aut", "cre"),
+             role = c("aut"),
              email = "hadley@rstudio.com"),
       person(given = "RStudio",
              role = "cph"))
