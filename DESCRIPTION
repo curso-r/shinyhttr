@@ -5,7 +5,6 @@ Version: 1.0.0
 Authors@R: 
     c(person(given = "Athos",
              family = "Damiani",
-             middle = "Petri",
              role = c("aut", "cre"),
              email = "athos.damiani@curso-r.com"),
       person(given = "Hadley",
@@ -14,9 +13,10 @@ Authors@R:
              email = "hadley@rstudio.com"),
       person(given = "RStudio",
              role = "cph"))
-Description: Modifies the httr::progress() function to let it 
-    send output to shinyWidgets::progressBar(). It is just a tweak at the 
-    original functions from httr to make it smooth for shiny developers.
+Description: Modifies the progress() function from 'httr' package to let it 
+      send output to progressBar() function from 'shinyWidgets' package. 
+      It is just a tweak at the original functions from 'httr' package to 
+      make it smooth for Shiny developers.
 License: MIT + file LICENSE
 BugReports: https://github.com/curso-r/shinyhttr/issues
 URL: https://github.com/curso-r/shinyhttr
