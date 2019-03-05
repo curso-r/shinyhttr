@@ -29,8 +29,6 @@ Add a progress bar to request just like the vanilla `httr::progress()` but with 
 }
 \examples{
 
-\dontrun{
-
 if (interactive()) {
   
   library(shiny)
@@ -66,8 +64,6 @@ if (interactive()) {
   }
   
   shinyApp(ui, server)
-}
-
 }
 }
 \seealso{
