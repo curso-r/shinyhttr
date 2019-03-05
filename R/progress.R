@@ -18,8 +18,6 @@
 #'
 #' @examples
 #'
-#' \dontrun{
-#'
 #' if (interactive()) {
 #'   
 #'   library(shiny)
@@ -56,8 +54,6 @@
 #'   
 #'   shinyApp(ui, server)
 #' }
-#'
-#'}
 progress <- function (
   session,
   id,
