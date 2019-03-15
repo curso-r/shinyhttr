@@ -5,7 +5,8 @@
 \title{Add a progress bar compatible with `shinyWidgets::updateProgressBar()`.}
 \usage{
 progress(session, id, type = c("down", "up"), con = stdout(),
-  title = NULL, status = NULL, range_value = NULL, unit_mark = "\%")
+  title = NULL, status = NULL, range_value = NULL,
+  unit_mark = "\%")
 }
 \arguments{
 \item{session}{(from `shinyWidgets::updateProgressBar()`` doc) The 'session' object passed to function given to shinyServer.}
@@ -33,7 +34,7 @@ if (interactive()) {
   
   library(shiny)
   library(shinyWidgets)
-  library(httr)
+  library(shinyhttr)
   
   ui <- fluidPage(
     
@@ -56,7 +57,7 @@ if (interactive()) {
   
   server <- function(input, output, session) {
     observeEvent(input$download, {
-      GET(
+      httr::GET(
         url = "https://speed.hetzner.de/100MB.bin",
         progress(session, id = "pb")
       )

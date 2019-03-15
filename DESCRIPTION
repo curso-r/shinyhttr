@@ -26,4 +26,6 @@ Imports:
     shinyWidgets,
     utils
 RoxygenNote: 6.1.1
-Enhances: shiny
+Enhances: 
+    shiny, 
+    httr
