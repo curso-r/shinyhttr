@@ -22,7 +22,7 @@
 #'   
 #'   library(shiny)
 #'   library(shinyWidgets)
-#'   library(httr)
+#'   library(shinyhttr)
 #'   
 #'   ui <- fluidPage(
 #'     
@@ -45,7 +45,7 @@
 #'   
 #'   server <- function(input, output, session) {
 #'     observeEvent(input$download, {
-#'       GET(
+#'       httr::GET(
 #'         url = "https://speed.hetzner.de/100MB.bin",
 #'         progress(session, id = "pb")
 #'       )
