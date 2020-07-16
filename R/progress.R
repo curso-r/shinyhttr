@@ -121,41 +121,34 @@ progress_bar <- function (
     if (type == "down") {
       total <- down[[1]]
       now <- down[[2]]
-    }
-    else {
+    } else {
       total <- up[[1]]
       now <- up[[2]]
     }
-
     if (total == 0 && now == 0) {
       bar <<- NULL
-    }
-    else if (total == 0) {
+    } else if (total == 0) {
       cat("\rDownloading: ", bytes(now, digits = 2), "     ",
           sep = "", file = con)
       utils::flush.console()
-    }
-    else {
+    } else {
       if (is.null(bar)) {
-        bar <<- utils::txtProgressBar(max = total, style = 3,
-                                      file = con)
+        bar <<- utils::txtProgressBar(max = total, style = 3, file = con)
       }
       utils::setTxtProgressBar(bar, now)
       if (now == total)
         close(bar)
     }
-
     shinyWidgets::updateProgressBar(
       session = session,
       id = session$ns(id),
-      value = now,
-      total = total,
+      value = round(now/total * 100, 0),
       title = title,
       status = status,
       range_value = range_value,
       unit_mark = unit_mark
     )
-
+    
     TRUE
   }
   show_progress
