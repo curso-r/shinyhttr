@@ -4,9 +4,16 @@
 \alias{progress}
 \title{Add a progress bar compatible with `shinyWidgets::updateProgressBar()`.}
 \usage{
-progress(session, id, type = c("down", "up"), con = stdout(),
-  title = NULL, status = NULL, range_value = NULL,
-  unit_mark = "\%")
+progress(
+  session,
+  id,
+  type = c("down", "up"),
+  con = stdout(),
+  title = NULL,
+  status = NULL,
+  range_value = NULL,
+  unit_mark = "\%"
+)
 }
 \arguments{
 \item{session}{(from `shinyWidgets::updateProgressBar()`` doc) The 'session' object passed to function given to shinyServer.}
@@ -68,5 +75,5 @@ if (interactive()) {
 }
 }
 \seealso{
-\code{\link[httr]{progress}}, \code{\link[shinyWidgets]{progressBar}}, \code{\link[shinyWidgets]{updateProgressBar}}
+\code{\link[httr:progress]{progress}}, \code{\link[shinyWidgets:progressBar]{progressBar}}, \code{\link[shinyWidgets:updateProgressBar]{updateProgressBar}}
 }

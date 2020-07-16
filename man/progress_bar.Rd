@@ -4,8 +4,16 @@
 \alias{progress_bar}
 \title{progress_bar}
 \usage{
-progress_bar(type, con, session, id, title = NULL, status = NULL,
-  range_value = NULL, unit_mark = "\%")
+progress_bar(
+  type,
+  con,
+  session,
+  id,
+  title = NULL,
+  status = NULL,
+  range_value = NULL,
+  unit_mark = "\%"
+)
 }
 \arguments{
 \item{type}{(from `httr::progress()` doc) Type of progress to display: either number of bytes uploaded or downloaded.}
@@ -31,5 +39,5 @@ a function with rules to print out the progress.
 Same as `httr:::progress_bar()` but with capability to talk to `shinyWidgets::progressBar()`.
 }
 \seealso{
-\code{\link{progress}}, \code{\link[shinyWidgets]{progressBar}}
+\code{\link[shinyhttr]{progress}}, \code{\link[shinyWidgets:progressBar]{progressBar}}
 }

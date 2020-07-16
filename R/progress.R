@@ -14,7 +14,7 @@
 #' @export
 #' 
 #'
-#' @seealso \code{\link[httr]{progress}}, \code{\link[shinyWidgets]{progressBar}}, \code{\link[shinyWidgets]{updateProgressBar}}
+#' @seealso \code{\link[httr:progress]{progress}}, \code{\link[shinyWidgets:progressBar]{progressBar}}, \code{\link[shinyWidgets:updateProgressBar]{updateProgressBar}}
 #'
 #' @examples
 #'
@@ -102,7 +102,7 @@ progress <- function (
 #'
 #' @return a function with rules to print out the progress.
 #'
-#' @seealso \code{\link{progress}}, \code{\link[shinyWidgets]{progressBar}}
+#' @seealso \code{\link[shinyhttr]{progress}}, \code{\link[shinyWidgets:progressBar]{progressBar}}
 #'
 progress_bar <- function (
   type,

@@ -24,8 +24,8 @@ Encoding: UTF-8
 LazyData: true
 Imports:
     shinyWidgets,
-    utils
-RoxygenNote: 6.1.1
-Enhances: 
-    shiny, 
+    utils,
     httr
+RoxygenNote: 7.1.1
+Enhances: 
+    shiny
