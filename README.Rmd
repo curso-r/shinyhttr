@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 
 # shinyhttr
 
-[![Travis build status](https://travis-ci.org/curso-r/shinyhttr.svg?branch=master)](https://travis-ci.org/curso-r/shinyhttr) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/curso-r/shinyhttr?branch=master&svg=true)](https://ci.appveyor.com/project/curso-r/shinyhttr) [![CRAN status](https://www.r-pkg.org/badges/version/shinyhttr)](https://cran.r-project.org/package=shinyhttr)
+[![Travis build status](https://travis-ci.org/curso-r/shinyhttr.svg?branch=master)](https://travis-ci.org/curso-r/shinyhttr) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/curso-r/shinyhttr?branch=master&svg=true)](https://ci.appveyor.com/project/curso-r/shinyhttr) [![CRAN status](https://www.r-pkg.org/badges/version/shinyhttr)](https://cran.r-project.org/package=shinyhttr) [![CRAN downloads](https://cranlogs.r-pkg.org/badges/shinyhttr)](https://cran.r-project.org/package=shinyhttr)
 
 The goal of shinyhttr is to integrate `httr::progress` with `shinyWidgets::progressBar`.
 
